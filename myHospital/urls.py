@@ -28,6 +28,7 @@ urlpatterns = [
     path('reports/', include('reports.urls')),
     path('bill/', include('bill.urls')),
 	path('login/', login),
+    path('login/login.html', login),
     path('login/register.html', register),
     path('login/login1.html', login1),
     path('logout/', logout),

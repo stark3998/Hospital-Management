@@ -1,0 +1,65 @@
+{% extends "home/base.html" %}
+
+{% block title %}Register{% endblock %}
+{% block heading %}Register Patient{% endblock %}
+
+{% block body %}
+<div class="row">
+  <form class="col s12" action='/profile/do_register/' method='POST'>
+    {% csrf_token %}
+    <div class="row">
+      <div class="input-field col s6">
+        <input type="text" name="first_name" id="first_name" class="validate" required>
+        <label for="first_name" >First Name</label>
+      </div>
+      <div class="input-field col s6">
+        <input type="text" name="last_name" id="last_name" class="validate" required>
+        <label for="last_name" >Last Name</label>
+      </div>
+      <div class="input-field col s12">
+        <input type="text" name="username" id="username" class="validate" required>
+        <label for="username" >Username</label>
+      </div>
+      <div class="input-field col s6">
+        <input type="password" name="password1" id="password1" class="validate" required>
+        <label for="password1" >Password</label>
+      </div>
+      <div class="input-field col s6">
+        <input type="password" name="password2" id="password2" class="validate" required>
+        <label for="password2" >Confirm Password</label>
+      </div>
+      <div class="input-field col s6">
+        <input type="text" name="contact_no" id="contact_no" class="validate" maxlength="10" required>
+        <label for="contact_no" >Contact Number</label>
+      </div>
+      <div class="input-field col s6">
+        <input type="email" name="email" id="email" class="validate" required>
+        <label for="email" >Email</label>
+      </div>
+      <div class="input-field col s12">
+        <textarea name="address" id="address" class="materialize-textarea" required></textarea>
+        <label for="address" >Address</label>
+      </div>
+      <div class="input-field col s6">
+        <input type="date" name="dob" id="dob" required>
+        <label for="dob" class="active">Birthdate</label>
+      </div>
+      <div class="input-field col s6">
+        <select name="blood_group" id="blood_group" class="validate" required>
+          <option value='O-'>O-</option>
+          <option value='O+'>O+</option>
+          <option value='A-'>A-</option>
+          <option value='A+'>A+</option>
+          <option value='B-'>B-</option>
+          <option value='B+'>B+</option>
+          <option value='AB-'>AB-</option>
+          <option value='AB+'>AB+</option>
+        </select>
+        <label for="blood_group" >Blood Group</label>
+      </div>
+
+      <button type="submit" class="btn" >Register</button>
+    </div>
+  </form>
+</div>
+{% endblock %}
